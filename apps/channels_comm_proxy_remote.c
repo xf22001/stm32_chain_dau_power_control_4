@@ -6,7 +6,7 @@
  *   文件名称：channels_comm_proxy_remote.c
  *   创 建 者：肖飞
  *   创建日期：2021年09月16日 星期四 10时34分46秒
- *   修改日期：2022年07月11日 星期一 09时30分22秒
+ *   修改日期：2022年07月11日 星期一 11时09分46秒
  *   描    述：
  *
  *================================================================*/
@@ -620,7 +620,7 @@ static command_item_t command_item_channel_fb_state = {
 	.cmd = channels_comm_proxy_command_enum(CHANNEL_FB_STATE),
 	.cmd_code = channels_comm_proxy_command_code_enum(CHANNEL_FB_STATE),
 	.broadcast = 0,
-	.request_period = 0,
+	.request_period = 300,
 	.request_callback = request_channel_fb_state,
 	.response_callback = response_channel_fb_state,
 	.timeout_callback = timeout_callback_proxy_null,
