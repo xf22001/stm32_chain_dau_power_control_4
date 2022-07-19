@@ -6,7 +6,7 @@
  *   文件名称：modbus_addr_handler.c
  *   创 建 者：肖飞
  *   创建日期：2020年07月17日 星期五 10时13分49秒
- *   修改日期：2022年06月25日 星期六 20时04分55秒
+ *   修改日期：2022年07月19日 星期二 16时34分14秒
  *   描    述：
  *
  *================================================================*/
@@ -935,6 +935,14 @@ void channels_modbus_data_action(void *fn_ctx, void *chain_ctx)
 			//power_manager_info_t *power_manager_info = (power_manager_info_t *)channels_info->power_manager_info;
 			//power_manager_group_info_t *power_manager_group_info = power_manager_info->power_manager_group_info + 0;
 			//modbus_data_value_r(modbus_data_ctx, pdu_group_info->relay_fault_id);
+		}
+		break;
+
+		case MODBUS_ADDR_RESTORE_SETTINGS: {
+			app_set_reset_config();
+			app_save_config();
+			debug("reset config ...");
+			HAL_NVIC_SystemReset();
 		}
 		break;
 
