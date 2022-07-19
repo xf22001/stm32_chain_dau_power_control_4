@@ -6,7 +6,7 @@
 #   文件名称：user.mk
 #   创 建 者：肖飞
 #   创建日期：2019年10月25日 星期五 13时04分38秒
-#   修改日期：2022年06月22日 星期三 11时38分08秒
+#   修改日期：2022年07月19日 星期二 15时06分43秒
 #   描    述：
 #
 #================================================================
@@ -54,7 +54,7 @@ USER_C_SOURCES += apps/can_config.c
 USER_C_SOURCES += apps/storage_config.c
 USER_C_SOURCES += apps/modbus_addr_handler.c
 USER_C_SOURCES += apps/display_cache.c
-USER_C_SOURCES += apps/power_manager_group_policy_handler.c
+USER_C_SOURCES += apps/power_manager_group_policy_config.c
 ifneq ($(call ifdef_any_of,SAL_WIZNET),)
 USER_C_SOURCES += apps/wiznet_spi.c
 endif
@@ -97,6 +97,7 @@ USER_C_SOURCES += apps/modules/app/dau/channels.c
 USER_C_SOURCES += apps/modules/app/dau/channel.c
 USER_C_SOURCES += apps/modules/app/dau/power_manager.c
 USER_C_SOURCES += apps/modules/app/dau/power_manager_handler_native.c
+USER_C_SOURCES += apps/modules/app/dau/power_manager_group_policy_chain.c
 USER_C_SOURCES += apps/modules/app/dau/channel_record.c
 ifneq ($(call ifdef_any_of,CHARGER_CHANNEL_PROXY_REMOTE),)
 USER_C_SOURCES += apps/modules/app/dau/channel_handler_proxy_remote.c
