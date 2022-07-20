@@ -6,7 +6,7 @@
  *   文件名称：channels_comm_proxy_remote.c
  *   创 建 者：肖飞
  *   创建日期：2021年09月16日 星期四 10时34分46秒
- *   修改日期：2022年07月19日 星期二 10时26分29秒
+ *   修改日期：2022年07月20日 星期三 10时11分19秒
  *   描    述：
  *
  *================================================================*/
@@ -380,6 +380,26 @@ static uint8_t pdu_fault(channel_info_t *channel_info)
 	channels_info_t *channels_info = (channels_info_t *)channel_info->channels_info;
 
 	if(get_first_fault(channels_info->faults) != -1) {
+		debug("");
+		fault = 1;
+	}
+
+	if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_NO_POWER_MODULE_GROUP) == 1) {
+		debug("");
+		fault = 1;
+	} else if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_RELAY_BOARD_FAULT) == 1) {
+		debug("");
+		fault = 1;
+	} else if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_RELAY_BOARD_CONNECT_TIMEOUT) == 1) {
+		debug("");
+		fault = 1;
+	} else if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_RELAY_BOARD_OVER_TEMPERATURE) == 1) {
+		debug("");
+		fault = 1;
+	} else if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_NO_POWER_MODULE_GROUP) == 1) {
+		debug("");
+		fault = 1;
+	} else if(get_fault(channel_info->faults, CHANNEL_FAULT_POWER_MANAGER_RELAY) == 1) {
 		debug("");
 		fault = 1;
 	}
